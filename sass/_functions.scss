@@ -1,0 +1,42 @@
+//Rounding function from Takeru Suzuki, https://gist.github.com/terkel/4373420
+@function decimal-round($number, $digits: 0, $mode: round) {
+    $n: 1;
+    @if type-of($number) != number {
+        @warn '#{ $number } is not a number.';
+        @return $number;
+    }
+    @if type-of($digits) != number {
+        @warn '#{ $digits } is not a number.';
+        @return $number;
+    } @else if not unitless($digits) {
+        @warn '#{ $digits } has a unit.';
+        @return $number;
+    }
+    @for $i from 1 through $digits {
+        $n: $n * 10;
+    }
+    @if $mode == round {
+        @return calc(round($number * $n) / $n);
+    } @else if $mode == ceil {
+        @return calc(ceil($number * $n) / $n);
+    } @else if $mode == floor {
+        @return calc(floor($number * $n) / $n);
+    } @else {
+        @warn '#{ $mode } is undefined keyword.';
+        @return $number;
+    }
+}
+
+
+//My rem to px convert, allow with units px or whithout units. REM is rounding to only two decimals because it is sufficient sharp for browsers and too much decimals in units can cause problems mainly in icon-fonts in some browsers.
+//Very low values, exmaple 1px, 2px..., is better stay in pixels - this value may by change as you want.
+@function rem($pixels) {
+	@if unitless($pixels) {
+		$pixels: $pixels * 1px;
+    }
+    @if $pixels < 7 and $pixels > -7 {
+        @return $pixels;
+    }
+    $pixels: calc($pixels / $base-font-size);
+	@return decimal-round($pixels, 2) * 1rem;
+}

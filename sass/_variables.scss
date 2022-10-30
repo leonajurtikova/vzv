@@ -1,0 +1,22 @@
+//COLORS
+$main-text-color: #000000;
+$second-text-color: #FFFFFF;
+$third-text-color: #D14A27;
+$fourth-text-color: #FFD599;
+$footer-color: #ECE8D3;
+
+//BACKGROUND COLORS
+$background-color: #F4F1E3;
+$background-main-color: rgba($background-color, 0.3);
+$background-box-gradient: linear-gradient(to bottom, #ffbe61, #ffc470, #ffcb7f, #ffd18e, #ffd79d);
+$background-box-active-gradient: linear-gradient(to bottom, #d14a27, #dd5829, #e8662b, #f3742d, #fe822f);
+
+//Variable for base font-size using in page
+$base-font-size: 16px;
+
+//BREAKPOINTS
+$breakpoint-desktop: 1090px;
+$breakpoint-laptop: 950px;
+$breakpoint-tablet: 830px;
+$breakpoint-mobile-xl: 750px;
+$breakpoint-mobile: 590px;

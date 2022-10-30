@@ -1,0 +1,114 @@
+.footer {
+    background: $footer-color;
+    padding: rem(20px) 0;
+    margin-top: rem(100px);
+    position: relative;
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @media (max-width: $breakpoint-desktop) {
+            display: block;
+            text-align: center;
+        }
+    }
+    &::before {
+        content: "";
+        background-image: url("../img/shelf.svg");
+        width: 100%;
+        height: rem(72px);
+        position: absolute;
+        left: 0;
+        bottom: 100%;
+        background-repeat: repeat-x;
+        background-position: left;
+        @media (max-width: $breakpoint-mobile) {
+            display: flex;
+        }
+    }
+    &__logo {
+        width: rem(82px);
+        height: rem(82px);
+        @media (max-width: $breakpoint-mobile) {
+            display: none;
+        }
+    }
+    &__info {
+        display: flex;
+        column-gap: rem(12px);
+        @media (max-width: $breakpoint-desktop) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    &__icon {
+        display: flex;
+        @media (max-width: $breakpoint-desktop) {
+            display: flex;
+            margin-top: rem(15px);
+        }
+    }
+    &__text {
+        font-size: clamp(rem(16px), 5vw, rem(20px));
+        font-weight: 700;
+        font-family:'Arial';
+        text-align: center;
+        line-height: 1.3;
+        color: $main-text-color;
+    }
+    &__link {
+        font-size: clamp(rem(16px), 5vw, rem(20px));
+        font-weight: 700;
+        font-family:'Arial';
+        text-align: left;
+        line-height: 1.3;
+        color: $main-text-color;
+        transition: color 0.3s ease-in-out;
+        &:hover {
+            color: $third-text-color;
+        }
+        @media (max-width: $breakpoint-desktop) {
+            text-align: center;
+        }
+        &--sublink {
+            font-size: clamp(rem(10px), 5vw, rem(16px));
+            font-weight: 400;
+        }
+    }
+    &__contact {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        align-items: center;
+        gap: 3px rem(12px);
+        @media (max-width: $breakpoint-desktop) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    &__social {
+        width: rem(139px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @media (max-width: $breakpoint-desktop) {
+            display: inline-flex;
+            margin-top: rem(20px);
+        }
+    }
+    &__list {
+        font-size: clamp(rem(10px), 5vw, rem(16px));
+        font-weight: 400;
+        font-family:'Arial';
+        text-align: center;
+        line-height: 1.3;
+        margin-top: rem(100px);
+        @media (max-width: $breakpoint-desktop) {
+            margin-top: rem(20px);
+        }
+    }
+    &__item {
+        padding: 0 rem(10px);
+    }
+}

@@ -1,0 +1,62 @@
+.tariff {
+    display: flex;
+    margin-top: rem(70px);
+    gap: rem(28px);
+    @media (max-width: $breakpoint-laptop) {
+        display: block;
+    }
+    &__box {
+        max-width: rem(372px);
+        background-image: $background-box-gradient;
+        border-radius: rem(15px);
+        padding: rem(40px);
+        margin-top: rem(30px);
+        &:hover {
+            background-image: $background-box-active-gradient;
+            .tariff {
+                &__title {
+                    color: $second-text-color;
+                }
+                &__subtitle {
+                    color: $fourth-text-color;
+                }
+                &__text {
+                    color: $second-text-color;
+                }
+            }
+        }
+        @media (max-width: $breakpoint-laptop) {
+            max-width: 100%;
+        }
+    }
+    &__title {
+        font-size: clamp(rem(16px), 4vw, rem(25px));
+        font-weight: 700;
+        font-family: 'Arial';
+        text-align: left;
+        line-height: 1.3;
+        color: $main-text-color;
+        margin-bottom: rem(40px);
+    }
+    &__subtitle {
+        font-size: clamp(rem(16px), 4vw, rem(25px));
+        font-weight: 700;
+        font-family: 'Arial';
+        text-align: left;
+        line-height: 1.3;
+        color: $third-text-color;
+        margin-bottom: rem(30px);
+    }
+    &__text {
+        font-size: clamp(rem(16px), 4vw, rem(18px));
+        font-weight: 400;
+        font-family: 'Arial';
+        text-align: left;
+        line-height: 1.3;
+        color: $main-text-color;
+        margin-bottom: rem(22px);
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
