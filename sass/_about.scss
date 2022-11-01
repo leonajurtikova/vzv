@@ -7,7 +7,7 @@
         display: block;
     }
     &__box {
-        background-image: linear-gradient(to bottom, #ffbe61, #ffc470, #ffcb7f, #ffd18e, #ffd79d);
+        background-image: $background-box-gradient;
         border-radius: rem(15px);
         padding: rem(40px);
         margin-top: rem(30px);
